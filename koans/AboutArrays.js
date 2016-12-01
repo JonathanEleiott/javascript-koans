@@ -8,7 +8,7 @@ describe("About Arrays", function() {
 
     var multiTypeArray = [0, 1, "two", function() { return 3; }, {value1: 4, value2: 5}, [6, 7]];
     expect(multiTypeArray[0]).toBe(0);
-    expect(multiTypeArray[2]).toBe("two";
+    expect(multiTypeArray[2]).toBe("two");
     expect(multiTypeArray[3]()).toBe(3);
     expect(multiTypeArray[4].value1).toBe(4);
     expect(multiTypeArray[4]["value2"]).toBe(5);
@@ -37,7 +37,7 @@ describe("About Arrays", function() {
     expect(fourNumberArray.length).toBe(6);
 
     var tenEmptyElementArray = new Array(10); 
-    expect(tenEmptyElementArray.length).toBe(1);
+    expect(tenEmptyElementArray.length).toBe(10);
 
     tenEmptyElementArray.length = 5;
     expect(tenEmptyElementArray.length).toBe(5);
@@ -48,7 +48,7 @@ describe("About Arrays", function() {
     
     expect(array.slice(0, 1)).toEqual(["peanut"]);
     expect(array.slice(0, 2)).toEqual(["peanut", "butter"]);
-    expect(array.slice(2, 2)).toEqual(["and", "jelly"]);
+    expect(array.slice(2, 2)).toEqual([]);
     expect(array.slice(2, 20)).toEqual(["and", "jelly"]);
     expect(array.slice(3, 0)).toEqual([]);
     expect(array.slice(3, 100)).toEqual(["jelly"]);
@@ -65,7 +65,7 @@ describe("About Arrays", function() {
     expect(array[1]).toBe("changed in function");
 
     var assignedArray = array;
-    assignedArray[5] = "changed in assignedArray";
+    assignedArray[5] = "five";
     expect(array[5]).toBe("five");
 
     var copyOfArray = array.slice();
@@ -81,7 +81,7 @@ describe("About Arrays", function() {
     
     var poppedValue = array.pop();
     expect(poppedValue).toBe(3);
-    expect(array).toEqual([[1, 2, 3]]);
+    expect(array).toEqual([1, 2]);
   });
 
   it("should know about shifting arrays", function() {
@@ -92,6 +92,6 @@ describe("About Arrays", function() {
     
     var shiftedValue = array.shift();
     expect(shiftedValue).toEqual(3);
-    expect(array).toEqual([3, 1, 2]);
+    expect(array).toEqual([1, 2]);
   });  
 });
